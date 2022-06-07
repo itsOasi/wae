@@ -1,0 +1,5 @@
+The Component is a data structure to be used by systems outside of the model, such as the physics engine or rendering engine.
+
+Users can create custom components to be used by custom systems.
+
+Note: Components only interact with systems designed to handle the data produced by them.

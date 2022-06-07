@@ -2,6 +2,7 @@
     "version": "0.0.1",
     "debug":true,
     "name":"My Wae",
+    "repo":"https://github.com/OasiBoi/itsOasi-Portfolio.git",
     "exhibits":[
         "home",
         "editor",

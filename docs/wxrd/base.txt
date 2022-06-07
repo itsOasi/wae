@@ -1,0 +1,3 @@
+The base is the smallest unit within the model, and is directly derived by both Entity and Component. 
+
+It simply has an id and holds properties. Potential uses can include custom data types to be used as properties.
