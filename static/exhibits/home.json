@@ -1,51 +1,60 @@
 {
     "meta":{    
-        "page_title":"What's Up",
-        "tab_title":"Woah Broski"
-    },
-    "style":{
-        "bg_color":"#000000",
-        "txt_color":"#FFFFFF"
+        "title":"Woah Broski"
     },
     "relation":{
         "adjacent":[],
-        "transition":[]
+        "transition":[],
+        "extras":{
+            "stylesheets":[
+                "static/style.css"
+            ],
+            "scripts":[]
+        }
     },
-    "components":{    
+    "components":{
+        "header":{
+            "type":"component",
+            "id":"header",
+            "style":{
+                "background-color":"#00000055",
+                "padding":"0vh"
+            },
+            "content":{
+                ".title":{
+                    "text":"Welcome to WAE"
+                }
+            },
+            "folder":["innova_basic/basic_header"],
+            "children":["nav"]
+        },
         "main":{
             "id":"main",
             "type":"vbox",
-            "spacing": "5em",
             "children":[
-                "intro",
-                "radio_player"
+                "intro"
             ]
         },
         "intro":{
             "type":"component",
             "id":"intro",
-            "folder":"innova_basic/basic_intro",
-            "style":{
-                "background-color":"#FF77GG",
-                "color":"#FFFFFF"
-            },
-            "tags":["inline"]
-        },
-        "radio_player":{
-            "id":"radio_player",
-            "type":"component",
-            "folder":"innova_basic/github_card",
-            "style":{
-                "background-color":"#000000",
-                "color":"#FFFFFF"
-            },
-            "tags":["inline"],
+            "folder":"innova_basic/basic_section",
             "content":{
-                "embed":{
-                    "data_github": "itsOasi"
+                ".title":{
+                    "text": "DO YOU KNOW DA WAE!?"
+                },
+                ".sub":{
+                    "text": "itsOasi's Web App Engine"
+                },
+                ".desc":{
+                    "text": "Make any web app you can imagine, the way you imagined it!"
+                },
+                ".media_container":{
+                    "src":"portfolio/intro/profile.png"
                 }
             }
         },
+
         "nav":{
             "type":"component",
             "id":"nav",
@@ -58,10 +67,10 @@
                 "height": "min-content",
                 "max-height": "80%",
                 "left": "0%",
-                "top": "10%",
+                "top": "5em",
                 "padding": "2em",
                 "border-radius": "0em 0em 1em 1em",
-                "background-color": "#00000077",
+                "background-color":"#00000055",
                 "z-index": "3",
                 "display": "none"
             },
