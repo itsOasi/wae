@@ -1,0 +1,8 @@
+The model is a system of tables holding entities and components.
+
+The model can be initialized with a view, similar to exhibits in wae.
+
+you can get a text overview of the data in the model with the peek function.
+
+When interfacing with external systems, the freeze function exports all of the active data as a json string. 
+The data shared is equivalent to that shared with the peek function, just in json format.

@@ -1,0 +1,5 @@
+Entities represent a data structure within the model. 
+
+It has mutable properties, tags, and references to component tables. 
+
+The model itself is derived from the Entity.
