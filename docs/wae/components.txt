@@ -1,4 +1,0 @@
-Components represent individual or collections of dom elements as features and their functionality. They can be buttons, 
-forms, entire sections of a page, a custom feature developed from scratch, etc.
-
-A basic component is simply a folder named for the component containing a comp.html file, a script.js, a vector.svg, and/or any other dependencies.

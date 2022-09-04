@@ -1,21 +1,22 @@
 from flask import Flask
-import os
-import static.components.wae as wae
+from wae import os, model
 app = Flask(__name__)
 
-@app.route("/")
-def no_slug():
-    return wae.output.load_index_page()
+wae_model = None
 
-@app.route("/<slug>")
+@app.route("/") # loads homepage
+def no_slug():
+    return wae_model.load_index()
+
+@app.route("/<slug>") # allows slug for the engine to process on the client's device
 def main(slug):
-    return wae.output.load_index_page()
+    return wae_model.load_index()
 
 @app.route("/pull", methods=["GET", "POST", "OPTIONS"])
 def pull():
-    repo = "https://github.com/itsOasi/portfolio.git"
-    os.system(f"git pull {repo}")
+    wae_model.pull()
     return {}
 
 if __name__ == "__main__":
+    wae_model = model.Model("wae/wae_config.json") # load static files for the project
     app.run(host="0.0.0.0", port=5000, debug=True)
