@@ -4,16 +4,27 @@
 
 ---
 
-An ECS inspired approach to developing web apps.
+While web apps are a very powerful tool as a means of encouraging business between the owner and visitors, I want to focus on creativity and what all can possibly be done with web apps.
 
+### Current Features:
 
+__Components__
 
-Concept       Equivalent      
-Entity      | Exhibit 
-- a web page and its associated url
-- represented as json object
+A common paradigm for developing anything, these are the modular, fully customizable building blocks of your web app.
 
-Component   | Component 
-- an element or collection of elements within an exhibit
+__Automated Deployments *__
 
+When launched, a fresh copy of WAE will clone your project from git and automatically deploy it.
+
+### Planned Features/Projects:
+
+__On Demand Deployments__
+
+__Cloud Based Editor__
+
+### __Footnotes__
+
+*missing documentation
+
+**under development
 

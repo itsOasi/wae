@@ -4,8 +4,8 @@ session_log = []
 def log(msg, lvl=0):
     LOG = ["LOG: ", "WRN: ", "ERR: "]
     log_msg = LOG[lvl]+msg
-    print(log_msg)
     session_log.append(log_msg)
+    return log_msg
 
 def write_file(name, data, perms="w+"):
     # create file for writing to with perms

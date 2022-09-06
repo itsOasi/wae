@@ -8,28 +8,30 @@ class Model:
 		'''
 		self._config_loc = config_loc # the location of wae_config.json
 		self._repo = input.get_config(self._config_loc, "repo") # reads wae_config to properly prepare to load the project
-		dep_mode = input.get_config(self._config_loc, "dep_mode")
-		if dep_mode in ["rel", "release"]:
-			self._ready = self._load_proj()
-		if dep_mode in ["dev", "develop"]:
-			self._ready = True
+		self._ready = self._load_proj()
 
 	def pull(self):
-		if self._ready:
-			input.pull_repo(self._repo)
+		input.pull_repo(self._repo)
 
 	def load_index(self):
 		if self._ready:
 			return output.load_page("index.html")
-		return "load_index failed: check output log"
+		else: 
+			return helper.log("could not load index: not ready", 2)
 
 	def _load_proj(self):
 		'''
 			perform environment checks and clone repository
 		'''
-		if output.read_cache("repo") == self._repo: # if working with the same project as last time
-			self._ready = input.pull_repo(self._repo) # update local copy of project files
-		else: # otherwise
-			# clear static directory
+		print(helper.log("loading project"))
+		dep_mode = input.get_config(self._config_loc, "dep_mode")
+		if dep_mode in ["rel", "release"]:
 			output.write_cache("repo", self._repo)
-			self._ready = input.clone_repo(self._repo) # clone repo into filesystem
+			return input.clone_repo(self._repo) # clone repo into filesystem
+		if dep_mode in ["dev", "develop"]:
+			if output.read_cache("repo") == self._repo: # if working with the same project as last time
+				return input.pull_repo(self._repo) # update local copy of project files
+			else: # otherwise
+				return input.clone_repo(self._repo) # clone repo into filesystem
+
+			

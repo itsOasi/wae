@@ -41,11 +41,8 @@ This option gives a lot more flexibility as you can create powerful peices of co
 
  ### **Generated Components**
  
- They can also be generated with:
+ Components can also be generated with:
 
  ``` component.generate(tag, comp_name) ```
 
 This option is good for quickly displaying information and dynamically loading icons or scripts.
-
-### Goals
-- components downloadable

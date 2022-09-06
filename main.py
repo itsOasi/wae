@@ -18,5 +18,5 @@ def pull():
     return {}
 
 if __name__ == "__main__":
-    wae_model = model.Model("wae/wae_config.json") # load static files for the project
+    wae_model = model.Model("wae_config.json") # load static files for the project
     app.run(host="0.0.0.0", port=5000, debug=True)
